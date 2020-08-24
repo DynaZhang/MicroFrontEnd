@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/app1">子应用1</router-link>
+    <router-link to="/app2" style="margin-left: 30px;">子应用2</router-link>
+    <div id="single-spa">
+      <div id="vue"></div>
+    </div>
   </div>
 </template>
 
