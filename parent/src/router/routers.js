@@ -1,10 +1,21 @@
+import HelloWorld from "../../../app1/src/components/HelloWorld";
+
 export default [
   {
-    name: 'app1',
-    path: '/app1'
+    path: '/',
+    redirect: '/home'
   },
   {
-    name: 'app2',
-    path: '/app2'
+    name: 'home',
+    path: '/home',
+    component: HelloWorld
+  },
+  {
+    name: 'teacher',
+    path: '/teacher'
+  },
+  {
+    name: 'course',
+    path: '/course'
   },
 ]

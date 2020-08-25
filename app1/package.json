@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "postcss-plugin-namespace": "0.0.2",
+    "postcss-selector-namespace": "3.0.1",
     "single-spa-vue": "1.9.0",
     "stats-webpack-plugin": "0.7.0",
     "vue": "^2.6.10"

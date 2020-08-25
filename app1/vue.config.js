@@ -1,15 +1,29 @@
 const StatsPlugin = require('stats-webpack-plugin')
+const selectorNamespace = require('postcss-selector-namespace')
 
 module.exports = {
   publicPath: '//localhost:8081/',
   css: {
-    extract: false
+    extract: false,
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          selectorNamespace({
+            namespace(css) {
+              /* 无需添加的样式 */
+              // if (css.includes("element-variables.scss")) return "";
+              return "#speiyou-teacher";
+            }
+          })
+        ]
+      }
+    }
   },
   configureWebpack: {
     devtool: 'none',
     output: {
-      library: 'singleVue',
-      libraryTarget: 'window'
+      library: 'teacher',
+      libraryTarget: 'umd'
     },
     devServer: {
       headers: {

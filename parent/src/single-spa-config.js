@@ -39,21 +39,21 @@ const getManifest = (url, bundle) => new Promise(async (resolve) => {
 // 参数1: 注册服务的名称
 // 参数2: 加载子项目中的文件(就是使用webpack打包好后的文件)
 // 参数3: 调起该项目的加载路由
-singleSpa.registerApplication('app1', async () => {
+singleSpa.registerApplication('teacher', async () => {
   let app = null
   await getManifest('http://localhost:8081/stats.json','app').then(() => {
-    app = window.singleVue
+    app = window.teacher
   })
   return app
-}, location => location.pathname.startsWith('/app1'))
+}, location => location.pathname.startsWith('/teacher'))
 
-singleSpa.registerApplication('app2', async () => {
+singleSpa.registerApplication('course', async () => {
   let app = null
   await getManifest('http://localhost:8082/stats.json','app').then(() => {
-    app = window.singleVue
+    app = window.course
   })
   return app
-}, location => location.pathname.startsWith('/app2'))
+}, location => location.pathname.startsWith('/course'))
 
 // 启动服务
 singleSpa.start()

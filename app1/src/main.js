@@ -3,7 +3,7 @@ import App from "./App"
 import singleSpaVue from "single-spa-vue"
 
 const options = {   // vue的配置参数
-  el: "#vue",
+  el: "#speiyou-teacher",
   render: h => h(App)
 }
 const vueLifeCycles = singleSpaVue({

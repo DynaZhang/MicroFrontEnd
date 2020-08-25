@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <router-link to="/app1">子应用1</router-link>
-    <router-link to="/app2" style="margin-left: 30px;">子应用2</router-link>
+    <router-link to="/home">首页</router-link>
+    <router-link to="/teacher" style="margin-left: 30px;">子应用1</router-link>
+    <router-link to="/course" style="margin-left: 30px;">子应用2</router-link>
     <div id="single-spa">
-      <div id="vue"></div>
+      <router-view v-if="$route.path==='/home'" />
+      <div id="speiyou-teacher"></div>
+      <div id="speiyou-course"></div>
     </div>
   </div>
 </template>
@@ -25,7 +28,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000000;
   margin-top: 60px;
 }
 </style>
