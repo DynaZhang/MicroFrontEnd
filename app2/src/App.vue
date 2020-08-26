@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted() {
+    addEventListener('token-error', (event) => {
+      console.log(event.detail)
+    })
+  }
 }
 </script>
 

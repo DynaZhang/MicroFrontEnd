@@ -5,6 +5,7 @@
     <router-link to="/course" style="margin-left: 30px;">子应用2</router-link>
     <div id="single-spa">
       <router-view v-if="$route.path==='/home'" />
+      <button type="button" @click="handleTokenError">token出错了</button>
       <div id="speiyou-teacher"></div>
       <div id="speiyou-course"></div>
     </div>
@@ -13,11 +14,18 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import {createEvent,dispatchEvent} from "./libs/utils";
+import {sendEvent} from "../../app2/src/libs/utils";
 
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods: {
+    handleTokenError() {
+      sendEvent('token-error', {a:1 , b: 2})
+    }
   }
 }
 </script>
