@@ -7,8 +7,8 @@
 <script>
 export default {
   name: 'app',
-  mounted() {
-    addEventListener('token-error', (event) => {
+  mounted: function () {
+    window.addEventListener('token-error', (event) => {
       console.log(event.detail)
     })
   }
