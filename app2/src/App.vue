@@ -5,12 +5,20 @@
 </template>
 
 <script>
+  import {removeEvent, subscribeEvent} from "./libs/utils";
+
 export default {
   name: 'app',
+  methods: {
+    handleTokenError () {
+      console.log('token出错')
+    }
+  },
   mounted: function () {
-    window.addEventListener('token-error', (event) => {
-      console.log(event.detail)
-    })
+    subscribeEvent('token-error', this.handleTokenError)
+  },
+  destroyed() {
+    removeEvent('token-error', this.handleTokenError)
   }
 }
 </script>

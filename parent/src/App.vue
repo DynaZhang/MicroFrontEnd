@@ -13,18 +13,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import {createEvent,dispatchEvent} from "./libs/utils";
-import {sendEvent} from "../../app2/src/libs/utils";
+import {publishEvent} from "../../app2/src/libs/utils";
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  },
   methods: {
     handleTokenError() {
-      sendEvent('token-error', {a:1 , b: 2})
+      publishEvent('token-error', {a:1 , b: 2})
     }
   }
 }
