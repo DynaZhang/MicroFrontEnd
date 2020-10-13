@@ -55,5 +55,13 @@ singleSpa.registerApplication('course', async () => {
   return app
 }, location => location.pathname.startsWith('/course'))
 
+singleSpa.registerApplication('admin1', async () => {
+  let app = null
+  await getManifest('http://localhost:8083/stats.json','app').then(() => {
+    app = window.admin1
+  })
+  return app
+}, location => location.pathname.startsWith('/admin1'))
+
 // 启动服务
 singleSpa.start()

@@ -47,6 +47,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './',
-    compress: true
+    compress: true,
+    port: 8081
   }
 }
