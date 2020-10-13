@@ -1,6 +1,21 @@
 <template>
   <div id="app">
-    Welcome to Your App2
+    <el-container>
+      <el-aside width="250px" style="height: 100%;">
+        <el-menu
+          default-active="/home"
+          router
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <el-menu-item index="/course/home">首页</el-menu-item>
+          <el-menu-item index="/course/page1">页面1</el-menu-item>
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -23,8 +38,6 @@ export default {
 }
 </script>
 
-<style scoped>
-#app {
-  color: #0000ff;
-}
+<style scoped lang="css">
+
 </style>
